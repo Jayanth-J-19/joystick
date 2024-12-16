@@ -1,0 +1,42 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Gradle files
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Local configuration
+/local.properties
+
+# Android Studio files
+.idea/
+*.iml
+*.hprof
+
+# Log files
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Proguard mapping
+mapping.txt
+
+# Keystore files
+*.keystore
+*.jks
