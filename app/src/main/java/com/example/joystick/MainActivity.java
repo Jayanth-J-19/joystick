@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
         js.setLayoutAlpha(150);
         js.setStickAlpha(100);
         js.setOffset(-50);
-        js.setMinimumDistance(10);
+        js.setMinimumDistance(50);
 
 
         layout_joystick2 = (RelativeLayout)findViewById(R.id.layout_joystick2);
@@ -57,7 +57,7 @@ public class MainActivity extends Activity {
         js2.setLayoutAlpha(150);
         js2.setStickAlpha(100);
         js2.setOffset(-50);
-        js2.setMinimumDistance(10);
+        js2.setMinimumDistance(50);
 
         //infinite loop checker for every 100ms of the joystick's direction
         //this is done through the use of sharedpreferences (saved data when we putString() at ontouchlistener)
@@ -78,6 +78,11 @@ public class MainActivity extends Activity {
 
         layout_joystick.setOnTouchListener(new OnTouchListener() {
             public boolean onTouch(View arg0, MotionEvent arg1) {
+                textView1.setText("X : 1500");
+                textView2.setText("Y : 1500");
+                SharedPreferences.Editor editor2 = sp.edit();
+                editor2.putString("joystickdirection", "stop");
+                editor2.apply();
                 js.drawStick(arg1);
                 if(arg1.getAction() == MotionEvent.ACTION_DOWN
                         || arg1.getAction() == MotionEvent.ACTION_MOVE) {
@@ -133,8 +138,8 @@ public class MainActivity extends Activity {
                         editor.apply();
                     }
                 } else if(arg1.getAction() == MotionEvent.ACTION_UP) {
-                    textView1.setText("C3T :");
-                    textView2.setText("C4Y :");
+                    textView1.setText("C3T : 1500");
+                    textView2.setText("C4Y : 1500");
 
                     SharedPreferences.Editor editor = sp.edit();
                     editor.putString("joystickdirection", "stop");
@@ -146,6 +151,11 @@ public class MainActivity extends Activity {
 
         layout_joystick2.setOnTouchListener(new OnTouchListener() {
             public boolean onTouch(View arg0, MotionEvent arg1) {
+                textView3.setText("X : 1500");
+                textView4.setText("Y : 1500");
+                SharedPreferences.Editor editor2 = sp.edit();
+                editor2.putString("joystickdirection", "stop");
+                editor2.apply();
                 js2.drawStick(arg1);
                 if(arg1.getAction() == MotionEvent.ACTION_DOWN
                         || arg1.getAction() == MotionEvent.ACTION_MOVE) {
@@ -166,7 +176,6 @@ public class MainActivity extends Activity {
                         SharedPreferences.Editor editor = sp.edit();
                         editor.putString("joystickdirection", "upright");
                         editor.apply();
-
 
                     } else if(direction == JoyStickClass.STICK_RIGHT) {
                         SharedPreferences.Editor editor = sp.edit();
@@ -201,8 +210,8 @@ public class MainActivity extends Activity {
                         editor.apply();
                     }
                 } else if(arg1.getAction() == MotionEvent.ACTION_UP) {
-                    textView3.setText("C2P :");
-                    textView4.setText("C1R :");
+                    textView3.setText("X : 1500");
+                    textView4.setText("Y : 1500");
 
                     SharedPreferences.Editor editor = sp.edit();
                     editor.putString("joystickdirection", "stop");

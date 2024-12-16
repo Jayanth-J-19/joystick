@@ -30,7 +30,7 @@ public class JoyStickClass {
     private LayoutParams params;
     private int stick_width, stick_height;
 
-    private int position_x = 1500, position_y = 1500, min_distance = 0;
+    private int position_x = 1500, position_y = 1500, min_distance = 1500;
     private float distance = 0, angle = 0;
 
     private DrawCanvas draw;
@@ -292,6 +292,8 @@ public class JoyStickClass {
         } catch (Exception e) { }
         mLayout.addView(draw);
     }
+
+
 
     private class DrawCanvas extends View {
         float x, y;
