@@ -81,8 +81,8 @@ public class MainActivity extends Activity {
                 js.drawStick(arg1);
                 if(arg1.getAction() == MotionEvent.ACTION_DOWN
                         || arg1.getAction() == MotionEvent.ACTION_MOVE) {
-                    textView1.setText("X : " + String.valueOf(js.getX()));
-                    textView2.setText("Y : " + String.valueOf(js.getY()));
+                    textView1.setText("C3T : " + String.valueOf(js.getX()));
+                    textView2.setText("C4Y : " + String.valueOf(js.getY()));
 
 
                     int direction = js.get8Direction();
@@ -133,8 +133,8 @@ public class MainActivity extends Activity {
                         editor.apply();
                     }
                 } else if(arg1.getAction() == MotionEvent.ACTION_UP) {
-                    textView1.setText("X :");
-                    textView2.setText("Y :");
+                    textView1.setText("C3T :");
+                    textView2.setText("C4Y :");
 
                     SharedPreferences.Editor editor = sp.edit();
                     editor.putString("joystickdirection", "stop");
@@ -149,8 +149,8 @@ public class MainActivity extends Activity {
                 js2.drawStick(arg1);
                 if(arg1.getAction() == MotionEvent.ACTION_DOWN
                         || arg1.getAction() == MotionEvent.ACTION_MOVE) {
-                    textView3.setText("X : " + String.valueOf(js2.getX()));
-                    textView4.setText("Y : " + String.valueOf(js2.getY()));
+                    textView3.setText("C2P : " + String.valueOf(js2.getX()));
+                    textView4.setText("C1R : " + String.valueOf(js2.getY()));
 
 
                     int direction = js2.get8Direction();
@@ -201,8 +201,8 @@ public class MainActivity extends Activity {
                         editor.apply();
                     }
                 } else if(arg1.getAction() == MotionEvent.ACTION_UP) {
-                    textView3.setText("X :");
-                    textView4.setText("Y :");
+                    textView3.setText("C2P :");
+                    textView4.setText("C1R :");
 
                     SharedPreferences.Editor editor = sp.edit();
                     editor.putString("joystickdirection", "stop");
